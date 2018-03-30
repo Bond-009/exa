@@ -1,5 +1,5 @@
 use ansi_term::Style;
-use ansi_term::Colour::{Red, Green, Yellow, Blue, Cyan, Purple, Fixed};
+use ansi_term::Colour::{Black, Red, Green, Yellow, Blue, Cyan, Purple};
 
 use output::render;
 use output::file_name::Colours as FileNameColours;
@@ -153,11 +153,11 @@ impl Colours {
                 major:  Green.bold(),
                 minor:  Green.normal(),
 
-                scale_byte: Fixed(118).normal(),
-                scale_kilo: Fixed(190).normal(),
-                scale_mega: Fixed(226).normal(),
-                scale_giga: Fixed(220).normal(),
-                scale_huge: Fixed(214).normal(),
+                scale_byte: Green.normal(),
+                scale_kilo: Green.bold(),
+                scale_mega: Yellow.normal(),
+                scale_giga: Red.normal(),
+                scale_huge: Purple.normal(),
             },
 
             users: Users {
@@ -181,7 +181,7 @@ impl Colours {
                 ignored:     Style::default().dimmed(),
             },
 
-            punctuation:  Fixed(244).normal(),
+            punctuation:  Black.bold(),
             date:         Blue.normal(),
             inode:        Purple.normal(),
             blocks:       Cyan.normal(),
