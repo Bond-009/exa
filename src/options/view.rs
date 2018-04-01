@@ -40,6 +40,7 @@ impl Mode {
                     table: Some(TableOptions::deduce(matches, vars)?),
                     header: matches.has(&flags::HEADER)?,
                     xattr: xattr::ENABLED && matches.has(&flags::EXTENDED)?,
+                    icons: matches.has(&flags::ICONS)?,
                 })
             }
         };
@@ -59,6 +60,7 @@ impl Mode {
                         table: None,
                         header: false,
                         xattr: xattr::ENABLED && matches.has(&flags::EXTENDED)?,
+                        icons: matches.has(&flags::ICONS)?,
                     };
 
                     Ok(Mode::Details(details))
@@ -73,6 +75,7 @@ impl Mode {
                     Ok(Mode::Grid(grid))
                 }
             }
+
             // If the terminal width couldn’t be matched for some reason, such
             // as the program’s stdout being connected to a file, then
             // fallback to the lines view.
@@ -81,6 +84,7 @@ impl Mode {
                     table: None,
                     header: false,
                     xattr: xattr::ENABLED && matches.has(&flags::EXTENDED)?,
+                    icons: matches.has(&flags::ICONS)?,
                 };
 
                 Ok(Mode::Details(details))
