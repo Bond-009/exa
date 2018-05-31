@@ -359,7 +359,7 @@ impl render::PermissionsColours for Colours {
 }
 
 impl render::SizeColours for Colours {
-    fn size(&self, size: u64)  -> Style {
+    fn size(&self, size: u64) -> Style {
         if self.scale {
             if size < 1024 {
                 self.size.scale_byte
@@ -382,7 +382,14 @@ impl render::SizeColours for Colours {
         }
     }
 
-    fn unit(&self)    -> Style { self.size.unit }
+    fn unit(&self, size: u64) -> Style {
+        if self.scale {
+            self.size(size)
+        }
+        else {
+            self.size.unit
+        }
+    }
     fn no_size(&self) -> Style { self.punctuation }
     fn major(&self)   -> Style { self.size.major }
     fn comma(&self)   -> Style { self.punctuation }

@@ -44,7 +44,7 @@ impl f::Size {
             width,
             contents: vec![
                 colours.size(size).paint(number),
-                colours.unit().paint(symbol),
+                colours.unit(size).paint(symbol),
             ].into(),
         }
     }
@@ -70,7 +70,7 @@ impl f::DeviceIDs {
 
 pub trait Colours {
     fn size(&self, size: u64) -> Style;
-    fn unit(&self) -> Style;
+    fn unit(&self, size: u64) -> Style;
     fn no_size(&self) -> Style;
 
     fn major(&self) -> Style;
@@ -95,7 +95,7 @@ pub mod test {
 
     impl Colours for TestColours {
         fn size(&self, _size: u64) -> Style { Fixed(66).normal() }
-        fn unit(&self)             -> Style { Fixed(77).bold() }
+        fn unit(&self, _size: u64) -> Style { Fixed(77).bold() }
         fn no_size(&self)          -> Style { Black.italic() }
 
         fn major(&self) -> Style { Blue.on(Red) }
