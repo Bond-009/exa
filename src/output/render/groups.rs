@@ -24,7 +24,7 @@ impl f::Group {
             }
         }
 
-        TextCell::paint(style, group.name().to_owned())
+        TextCell::paint(style, group.name().to_string_lossy().to_string())
     }
 }
 
