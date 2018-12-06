@@ -21,7 +21,7 @@ fn git_hash() -> String {
         &Command::new("git")
             .args(&["rev-parse", "--short", "HEAD"])
             .output().unwrap()
-            .stdout).trim().to_string()
+            .stdout).trim().to_owned()
 }
 
 fn main() {

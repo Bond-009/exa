@@ -467,12 +467,12 @@ mod ext_test {
 
     #[test]
     fn extension() {
-        assert_eq!(Some("dat".to_string()), File::ext(Path::new("fester.dat")))
+        assert_eq!(Some("dat".to_owned()), File::ext(Path::new("fester.dat")))
     }
 
     #[test]
     fn dotfile() {
-        assert_eq!(Some("vimrc".to_string()), File::ext(Path::new(".vimrc")))
+        assert_eq!(Some("vimrc".to_owned()), File::ext(Path::new(".vimrc")))
     }
 
     #[test]
