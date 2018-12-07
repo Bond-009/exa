@@ -4,8 +4,9 @@ use std::path::{Path, PathBuf};
 use std::sync::Mutex;
 
 use git2;
+use log::{debug, error, info, log, warn};
 
-use fs::fields as f;
+use crate::fs::fields as f;
 
 
 /// A **Git cache** is assembled based on the user’s input arguments.
@@ -53,7 +54,7 @@ impl FromIterator<PathBuf> for GitCache {
             else {
                 match GitRepo::discover(path) {
                     Ok(r) => {
-                        if let Some(mut r2) = git.repos.iter_mut().find(|e| e.has_workdir(&r.workdir)) {
+                        if let Some(r2) = git.repos.iter_mut().find(|e| e.has_workdir(&r.workdir)) {
                             debug!("Adding to existing repo (workdir matches with {:?})", r2.workdir);
                             r2.extra_paths.push(r.original_path);
                             continue;

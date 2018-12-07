@@ -5,7 +5,7 @@ use datetime::fmt::DateFormat;
 use locale;
 use std::cmp;
 
-use fs::fields::Time;
+use crate::fs::fields::Time;
 
 
 /// Every timestamp in exa needs to be rendered by a **time format**.

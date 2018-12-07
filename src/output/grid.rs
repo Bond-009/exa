@@ -2,9 +2,9 @@ use std::io::{Write, Result as IOResult};
 
 use term_grid as tg;
 
-use fs::File;
-use style::Colours;
-use output::file_name::FileStyle;
+use crate::fs::File;
+use crate::style::Colours;
+use crate::output::file_name::FileStyle;
 
 
 #[derive(PartialEq, Debug, Copy, Clone)]

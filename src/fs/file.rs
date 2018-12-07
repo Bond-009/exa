@@ -6,8 +6,10 @@ use std::io::Result as IOResult;
 use std::os::unix::fs::{MetadataExt, PermissionsExt, FileTypeExt};
 use std::path::{Path, PathBuf};
 
-use fs::dir::Dir;
-use fs::fields as f;
+use log::{debug, error, log};
+
+use crate::fs::dir::Dir;
+use crate::fs::fields as f;
 
 
 /// A **File** is a wrapper around one of Rust's Path objects, along with

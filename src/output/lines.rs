@@ -2,9 +2,9 @@ use std::io::{Write, Result as IOResult};
 
 use ansi_term::ANSIStrings;
 
-use fs::File;
-use output::file_name::{FileName, FileStyle};
-use style::Colours;
+use crate::fs::File;
+use crate::output::file_name::{FileName, FileStyle};
+use crate::style::Colours;
 
 
 /// The lines view literally just displays each file, line-by-line.

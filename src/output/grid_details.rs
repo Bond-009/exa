@@ -5,18 +5,18 @@ use std::io::{Write, Result as IOResult};
 use ansi_term::ANSIStrings;
 use term_grid as grid;
 
-use fs::{Dir, File};
-use fs::feature::git::GitCache;
-use fs::feature::xattr::FileAttributes;
-use fs::filter::FileFilter;
+use crate::fs::{Dir, File};
+use crate::fs::feature::git::GitCache;
+use crate::fs::feature::xattr::FileAttributes;
+use crate::fs::filter::FileFilter;
 
-use style::Colours;
-use output::cell::TextCell;
-use output::details::{Options as DetailsOptions, Row as DetailsRow, Render as DetailsRender};
-use output::grid::Options as GridOptions;
-use output::file_name::FileStyle;
-use output::table::{Table, Row as TableRow, Options as TableOptions};
-use output::tree::{TreeParams, TreeDepth};
+use crate::style::Colours;
+use crate::output::cell::TextCell;
+use crate::output::details::{Options as DetailsOptions, Row as DetailsRow, Render as DetailsRender};
+use crate::output::grid::Options as GridOptions;
+use crate::output::file_name::FileStyle;
+use crate::output::table::{Table, Row as TableRow, Options as TableOptions};
+use crate::output::tree::{TreeParams, TreeDepth};
 
 
 #[derive(Debug)]

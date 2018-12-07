@@ -6,8 +6,8 @@
 
 use ansi_term::Style;
 
-use fs::File;
-use output::file_name::FileColours;
+use crate::fs::File;
+use crate::output::file_name::FileColours;
 
 
 #[derive(Debug, Default, PartialEq)]
