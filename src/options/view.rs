@@ -1,4 +1,4 @@
-use lazy_static::{lazy_static, __lazy_static_create, __lazy_static_internal};
+use lazy_static::*;
 use term_size;
 
 use crate::output::{View, Mode, grid, details};
