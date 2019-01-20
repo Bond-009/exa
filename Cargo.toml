@@ -32,11 +32,11 @@ datetime = "0.4.7"
 env_logger = "0.6"
 glob = "0.2"
 lazy_static = "1"
-libc = "0.2.44"
+libc = "0.2.47"
 locale = "0.2.2"
 log = "0.4"
 natord = "1.0.9"
-num_cpus = "1.8.0"
+num_cpus = "1.9.0"
 number_prefix = "0.2.8"
 scoped_threadpool = "0.1.*"
 term_grid = "0.1.7"
@@ -59,6 +59,6 @@ lto = true
 panic = "abort"
 
 [dependencies.git2]
-version = "0.7"
+version = "0.8"
 optional = true
 default-features = false
