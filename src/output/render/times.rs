@@ -1,9 +1,9 @@
 use datetime::TimeZone;
 use ansi_term::Style;
 
-use fs::fields as f;
-use output::cell::TextCell;
-use output::time::TimeFormat;
+use crate::fs::fields as f;
+use crate::output::cell::TextCell;
+use crate::output::time::TimeFormat;
 
 
 impl f::Time {

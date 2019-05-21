@@ -1,15 +1,15 @@
 use ansi_term::Style;
 use locale::Numeric as NumericLocale;
 
-use fs::fields as f;
-use output::cell::{TextCell, DisplayWidth};
-use output::table::SizeFormat;
+use crate::fs::fields as f;
+use crate::output::cell::{TextCell, DisplayWidth};
+use crate::output::table::SizeFormat;
 
 
 
 impl f::Size {
     pub fn render<C: Colours>(&self, colours: &C, size_format: SizeFormat, numerics: &NumericLocale) -> TextCell {
-        use number_prefix::{binary_prefix, decimal_prefix};
+        use number_prefix::NumberPrefix;
         use number_prefix::{Prefixed, Standalone, PrefixNames};
 
         let size = match *self {
@@ -19,8 +19,8 @@ impl f::Size {
         };
 
         let result = match size_format {
-            SizeFormat::DecimalBytes  => decimal_prefix(size as f64),
-            SizeFormat::BinaryBytes   => binary_prefix(size as f64),
+            SizeFormat::DecimalBytes  => NumberPrefix::decimal(size as f64),
+            SizeFormat::BinaryBytes   => NumberPrefix::binary(size as f64),
             SizeFormat::JustBytes     => {
                 let string = numerics.format_int(size);
                 return TextCell::paint(colours.size(size), string);
@@ -82,9 +82,9 @@ pub trait Colours {
 #[cfg(test)]
 pub mod test {
     use super::Colours;
-    use output::cell::{TextCell, DisplayWidth};
-    use output::table::SizeFormat;
-    use fs::fields as f;
+    use crate::output::cell::{TextCell, DisplayWidth};
+    use crate::output::table::SizeFormat;
+    use crate::fs::fields as f;
 
     use locale::Numeric as NumericLocale;
     use ansi_term::Colour::*;
