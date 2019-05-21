@@ -6,7 +6,7 @@ use std::io::Result as IOResult;
 use std::os::unix::fs::{MetadataExt, PermissionsExt, FileTypeExt};
 use std::path::{Path, PathBuf};
 
-use log::{debug, error, log};
+use log::{debug, error};
 
 use crate::fs::dir::Dir;
 use crate::fs::fields as f;

@@ -8,7 +8,7 @@ use zoneinfo_compiled::{CompiledData, Result as TZResult};
 
 use locale;
 
-use log::{debug, log};
+use log::debug;
 
 use users::UsersCache;
 

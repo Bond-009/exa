@@ -190,7 +190,7 @@ impl<'a> Render<'a> {
     /// parallelisable, and uses a pool of threads.
     fn add_files_to_table<'dir, 'ig>(&self, pool: &mut Pool, table: &mut Option<Table<'a>>, rows: &mut Vec<Row>, src: &[File<'dir>], ignore: Option<&'ig IgnoreCache>, depth: TreeDepth) {
         use std::sync::{Arc, Mutex};
-        use log::{error, log};
+        use log::error;
         use crate::fs::feature::xattr;
 
         let mut file_eggs = Vec::new();

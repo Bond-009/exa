@@ -8,7 +8,7 @@ use std::path::{Component, PathBuf};
 
 use ansi_term::{ANSIStrings, Style};
 
-use log::{debug, log};
+use log::debug;
 
 use crate::fs::{Dir, File};
 use crate::fs::feature::ignore::IgnoreCache;

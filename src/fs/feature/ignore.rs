@@ -8,7 +8,7 @@ use std::io::Read;
 use std::path::{Path, PathBuf};
 use std::sync::RwLock;
 
-use log::{debug, log};
+use log::debug;
 
 use crate::fs::filter::IgnorePatterns;
 
